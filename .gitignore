@@ -1,0 +1,16 @@
+# Dependencies
+node_modules/
+
+# Build output
+dist/
+
+# Playwright output
+test-results/
+playwright-report/
+
+# Environment files (never commit real credentials)
+.env
+
+# OS artifacts
+.DS_Store
+Thumbs.db

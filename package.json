@@ -1,0 +1,39 @@
+{
+  "name": "playwright-ddt-framework",
+  "version": "1.0.0",
+  "description": "Production-quality data-driven Playwright testing framework for SauceDemo",
+  "scripts": {
+    "test": "playwright test",
+    "test:headed": "playwright test --headed",
+    "test:debug": "playwright test --debug",
+    "test:login": "playwright test tests/login.spec.ts",
+    "test:csv": "cross-env DATA_SOURCE=csv playwright test",
+    "test:yaml": "cross-env DATA_SOURCE=yaml playwright test",
+    "test:properties": "cross-env DATA_SOURCE=properties playwright test",
+    "test:excel": "cross-env DATA_SOURCE=excel playwright test",
+    "generate:excel": "npx tsx scripts/generateExcelData.ts",
+    "report": "playwright show-report",
+    "typecheck": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.49.0",
+    "@types/js-yaml": "^4.0.9",
+    "@types/node": "^22.10.0",
+    "cross-env": "^10.1.0",
+    "dotenv": "^16.4.7",
+    "typescript": "^5.7.2"
+  },
+  "dependencies": {
+    "js-yaml": "^4.1.0",
+    "xlsx": "^0.18.5"
+  },
+  "keywords": [
+    "playwright",
+    "typescript",
+    "data-driven-testing",
+    "automation",
+    "pom"
+  ],
+  "author": "",
+  "license": "MIT"
+}

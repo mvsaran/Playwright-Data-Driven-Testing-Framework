@@ -1,0 +1,6 @@
+﻿testCaseId,testCaseName,username,password,expectedResult
+TC_LOGIN_001,Valid standard user login,standard_user,secret_sauce,success
+TC_LOGIN_002,Invalid username,invalid_user,secret_sauce,failure
+TC_LOGIN_003,Invalid password,standard_user,wrong_password,failure
+TC_LOGIN_004,Empty username,,secret_sauce,failure
+TC_LOGIN_005,Empty password,standard_user,,failure

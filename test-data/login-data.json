@@ -1,0 +1,37 @@
+[
+  {
+    "testCaseId": "TC_LOGIN_001",
+    "testCaseName": "Valid standard user login",
+    "username": "standard_user",
+    "password": "secret_sauce",
+    "expectedResult": "success"
+  },
+  {
+    "testCaseId": "TC_LOGIN_002",
+    "testCaseName": "Invalid username",
+    "username": "invalid_user",
+    "password": "secret_sauce",
+    "expectedResult": "failure"
+  },
+  {
+    "testCaseId": "TC_LOGIN_003",
+    "testCaseName": "Invalid password",
+    "username": "standard_user",
+    "password": "wrong_password",
+    "expectedResult": "failure"
+  },
+  {
+    "testCaseId": "TC_LOGIN_004",
+    "testCaseName": "Empty username",
+    "username": "",
+    "password": "secret_sauce",
+    "expectedResult": "failure"
+  },
+  {
+    "testCaseId": "TC_LOGIN_005",
+    "testCaseName": "Empty password",
+    "username": "standard_user",
+    "password": "",
+    "expectedResult": "failure"
+  }
+]

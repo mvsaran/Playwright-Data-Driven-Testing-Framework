@@ -1,0 +1,61 @@
+﻿# SauceDemo Login Test Data — YAML format
+#
+# YAML advantages:
+#   - Inline comments explain WHY each scenario exists (unlike JSON).
+#   - No quotes around strings unless they contain special characters.
+#   - Blank lines between entries improve readability.
+#   - Non-developers can edit this without knowing JSON syntax.
+#
+# How to use:
+#   $env:DATA_SOURCE = "yaml"
+#   npm test
+
+# ──────────────────────────────────────────────────────────────
+# TC_LOGIN_001 — HAPPY PATH
+# Validates that the standard SauceDemo account can log in.
+# ──────────────────────────────────────────────────────────────
+- testCaseId: TC_LOGIN_001
+  testCaseName: Valid standard user login
+  username: standard_user
+  password: secret_sauce
+  expectedResult: success
+
+# ──────────────────────────────────────────────────────────────
+# TC_LOGIN_002 — FAILURE: non-existent username
+# SauceDemo should return a generic "credentials do not match"
+# error (not "username not found", which would aid enumeration).
+# ──────────────────────────────────────────────────────────────
+- testCaseId: TC_LOGIN_002
+  testCaseName: Invalid username
+  username: invalid_user
+  password: secret_sauce
+  expectedResult: failure
+
+# ──────────────────────────────────────────────────────────────
+# TC_LOGIN_003 — FAILURE: correct username, wrong password
+# ──────────────────────────────────────────────────────────────
+- testCaseId: TC_LOGIN_003
+  testCaseName: Invalid password
+  username: standard_user
+  password: wrong_password
+  expectedResult: failure
+
+# ──────────────────────────────────────────────────────────────
+# TC_LOGIN_004 — BOUNDARY: empty username field
+# The application must reject the form and show "Username is required".
+# ──────────────────────────────────────────────────────────────
+- testCaseId: TC_LOGIN_004
+  testCaseName: Empty username
+  username: ""
+  password: secret_sauce
+  expectedResult: failure
+
+# ──────────────────────────────────────────────────────────────
+# TC_LOGIN_005 — BOUNDARY: empty password field
+# The application must reject the form and show "Password is required".
+# ──────────────────────────────────────────────────────────────
+- testCaseId: TC_LOGIN_005
+  testCaseName: Empty password
+  username: standard_user
+  password: ""
+  expectedResult: failure
